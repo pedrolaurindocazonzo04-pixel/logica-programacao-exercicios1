@@ -1,2 +1,128 @@
-# logica-programacao-exercicios1
-Coleção de exercícios resolvidos de lógica de programação utilizando Visualg, organizados por níveis de dificuldade, com foco no desenvolvimento do raciocínio lógico.
+# 
+Algoritmo "contar_numero_v2"
+Var
+   v: Vetor[1..20] de Inteiro
+   i, num, cont: Inteiro
+
+Inicio
+   i <- 1
+   Enquanto i <= 20 faca
+      Escreva("Valor ", i, ": ")
+      Leia(v[i])
+      i <- i + 1
+   FimEnquanto
+
+   Escreva("Número a procurar: ")
+   Leia(num)
+
+   cont <- 0
+   i <- 1
+   Enquanto i <= 20 faca
+      Se v[i] = num Entao
+         cont <- cont + 1
+      FimSe
+      i <- i + 1
+   FimEnquanto
+
+   Escreval("Total encontrado: ", cont)
+FimAlgoritmo
+Algoritmo "segundo_maior_v2"
+Var
+   v: Vetor[1..10] de Inteiro
+   i, maior, segundo: Inteiro
+
+Inicio
+   maior <- -9999
+   segundo <- -9999
+
+   Para i <- 1 Ate 10 faca
+      Leia(v[i])
+
+      Se v[i] > maior Entao
+         segundo <- maior
+         maior <- v[i]
+      Senao Se v[i] > segundo Entao
+         segundo <- v[i]
+      FimSe
+   FimPara
+
+   Escreval("Segundo maior: ", segundo)
+FimAlgoritmo
+
+Algoritmo "soma_vetores_v2"
+Var
+   v: Vetor[1..10] de Inteiro
+   i, num: Inteiro
+
+Inicio
+   Para i <- 1 Ate 10 faca
+      Escreva("Valor do vetor 1: ")
+      Leia(v[i])
+
+      Escreva("Valor do vetor 2: ")
+      Leia(num)
+
+      v[i] <- v[i] + num
+   FimPara
+
+   Escreval("Resultado:")
+   Para i <- 1 Ate 10 faca
+      Escre(v[i], " ")
+   FimPara
+FimAlgoritmo
+Algoritmo "deslocar_vetor_v2"
+Var
+   v, novo: Vetor[1..10] de Inteiro
+   i, x: Inteiro
+
+Inicio
+   Para i <- 1 Ate 10 faca
+      Leia(v[i])
+   FimPara
+
+   Escreva("Digite X: ")
+   Leia(x)
+
+   novo[1] <- x
+
+   Para i <- 2 Ate 10 faca
+      novo[i] <- v[i-1]
+   FimPara
+
+   Escreval("Novo vetor:")
+   Para i <- 1 Ate 10 faca
+      Escre(novo[i], " ")
+   FimPara
+FimAlgoritmo
+
+Algoritmo "ordem_crescente_v2"
+Var
+   v: Vetor[1..15] de Inteiro
+   i, j, menor, pos, aux: Inteiro
+
+Inicio
+   Para i <- 1 Ate 15 faca
+      Leia(v[i])
+   FimPara
+
+   Para i <- 1 Ate 14 faca
+      menor <- v[i]
+      pos <- i
+
+      Para j <- i+1 Ate 15 faca
+         Se v[j] < menor Entao
+            menor <- v[j]
+            pos <- j
+         FimSe
+      FimPara
+
+      aux <- v[i]
+      v[i] <- v[pos]
+      v[pos] <- aux
+   FimPara
+
+   Escreval("Ordenado:")
+   Para i <- 1 Ate 15 faca
+      Escre(v[i], " ")
+   FimPara
+FimAlgoritmol
